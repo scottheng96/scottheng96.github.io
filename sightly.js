@@ -74,7 +74,7 @@ bodyPix.load(bodyPixProperties).then(function (model_bp) {
 // }
 
 function paintToCanvas() {
-  setInterval(() =>{ canvas_bp_ctx.drawImage(video,0,0,video.videoWidth, video.videoHeight);
+  setInterval(() =>{ canvas_bp_ctx.drawImage(video,0,0,canvas_bp.width, canvas_bp.height);
   }, 16);
   }
 
