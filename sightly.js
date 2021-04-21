@@ -61,7 +61,7 @@ bodyPix.load(bodyPixProperties).then(function(model_bp) {
     model = model_bp;
 });
 
-function filter() {
+function filter(model) {
     if (ready) {
 
     TempCanvas_context.drawImage(video,0,0);
