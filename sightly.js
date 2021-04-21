@@ -74,7 +74,7 @@ bodyPix.load(bodyPixProperties).then(function (model_bp) {
 // }
 
 function paintToCanvas() {
-  return setInterval(() =>{ canvas_bp_ctx.drawImage(video,0,0,video.videoWidth, video.videoHeight);
+  setInterval(() =>{ canvas_bp_ctx.drawImage(video,0,0,video.videoWidth, video.videoHeight);
   }, 16);
   }
 
@@ -93,9 +93,10 @@ if (navigator.mediaDevices.getUserMedia) {
       video.srcObject = stream;
 
     //   video_bp.addEventListener("loadeddata", filter(model));
-      setInterval(() =>{ 
-        canvas_bp_ctx.drawImage(video,0,0,canvas_bp.width, canvas_bp.height);
-      }, 16);
+      // setInterval(() =>{ 
+      //   canvas_bp_ctx.drawImage(video,0,0,canvas_bp.width, canvas_bp.height);
+      // }, 16);
+      paintToCanvas();
     })
     .catch(function (problem) {
       console.log("An Error Occurred");
