@@ -86,7 +86,7 @@ function filter(model) {
     ready = true;
     }
     
-    window.requestAnimationFrame(filter);
+    window.requestAnimationFrame(filter(model));
 }
 
 
