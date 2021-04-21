@@ -55,8 +55,8 @@ console.log("Body-Pix model loaded.");
 
 function filter() {
   if (ready) {
-    // var frame = getNextFrame();
-    // var personSegment = frameSegmentation(frame);
+    var frame = getNextFrame();
+    var personSegment = frameSegmentation(frame);
     // updateFeed(personSegment, frame);
     canvas_bp_ctx.drawImage(video,0,0,canvas_bp.width, canvas_bp.height)
   }
