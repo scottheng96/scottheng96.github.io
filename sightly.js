@@ -56,7 +56,9 @@ function processFrame(canvas, mask_imagedata) {
 
 var ready = true;
 
-var model = await bodyPix.load(bodyPixProperties);
+async function loadAndUseModel() {
+    var model = await bodyPix.load(bodyPixProperties);
+}
 
 function filter() {
     if (ready) {
