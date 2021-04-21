@@ -20,7 +20,6 @@ canvas_bp_ctx.height = height;
 /*
 BODYPIX MODEL
 */
-const bodyPix = require('@tensorflow-models/body-pix');
 
 const bodyPixProperties = {
   //can also be ResNet archtecture
@@ -77,7 +76,17 @@ function getNextFrame() {
 };
 
 const frameSegmentation = async () => {
-  var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
+  // var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
+  const segmentation = await net.segmentMultiPerson(image, {
+    flipHorizontal: false,
+    internalResolution: 'medium',
+    segmentationThreshold: 0.7,
+    maxDetections: 10,
+    scoreThreshold: 0.2,
+    nmsRadius: 20,
+    minKeypointScore: 0.3,
+    refineSteps: 10
+  });
   return segmentation;
 };
 
