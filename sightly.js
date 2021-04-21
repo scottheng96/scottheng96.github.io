@@ -45,12 +45,13 @@ var ready = false;
 
 const loadBodyPixModel = async () => {
   const model = await bodyPix.load(bodyPixProperties);
-  console.log("Body-Pix model loaded.");
   ready = true;
   return model;
 };
 
+console.log("trying to load model");
 const model = loadBodyPixModel();
+console.log("Body-Pix model loaded.");
 
 function filter() {
   if (ready) {
