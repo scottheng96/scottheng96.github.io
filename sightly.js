@@ -55,10 +55,11 @@ function processFrame(canvas, mask_imagedata) {
 };
 
 var ready = true;
+var model = undefined;
 
-async function loadAndUseModel() {
-    var model = await bodyPix.load(bodyPixProperties);
-}
+bodyPix.load(bodyPixProperties).then(function(model_bp) {
+    model = model_bp;
+});
 
 function filter() {
     if (ready) {
