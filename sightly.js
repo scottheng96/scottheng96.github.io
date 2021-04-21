@@ -1,5 +1,3 @@
-import * as bodyPix from "https://cdn.skypack.dev/@tensorflow-models/body-pix@2.1.0";
-
 /* Object Removal Filter Javascript Code
 Filter process:
 - code processes video stream frame by frame
