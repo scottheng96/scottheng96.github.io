@@ -20,6 +20,7 @@ canvas_bp_ctx.height = height;
 /*
 BODYPIX MODEL
 */
+const bodyPix = require('@tensorflow-models/body-pix');
 
 const bodyPixProperties = {
   //can also be ResNet archtecture
