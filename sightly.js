@@ -77,7 +77,7 @@ function getNextFrame() {
 
 const frameSegmentation = async () => {
   // var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
-  const segmentation = await net.segmentMultiPerson(image, {
+  const segmentation = await model.segmentMultiPerson(image, {
     flipHorizontal: false,
     internalResolution: 'medium',
     segmentationThreshold: 0.7,
