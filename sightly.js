@@ -6,7 +6,6 @@ Filter process:
 - reconstructs the stream (with delay)
 */
 
-import * as bodyPix from '@tensorflow-models/body-pix'; 
 
 const video = document.getElementById('webcam');
 const video_bp = document.getElementById('webcam-bp');
