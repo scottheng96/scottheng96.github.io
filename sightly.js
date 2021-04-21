@@ -67,7 +67,7 @@ function filter() {
     TempCanvas_context.drawImage(video,0,0);
     ready = false;
 
-    var segmentation = await model.segmentPerson(TempCanvas,segmentationProperties);
+    var segmentation = model.segmentPerson(TempCanvas,segmentationProperties);
 
     //copy-pasted 
     const coloredPartImage = bodyPix.toMask(segmentation);
