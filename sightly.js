@@ -4,6 +4,7 @@ Filter process:
 - processes the frame with the given model and returns the frame (with objects filtered)
 - reconstructs the stream (with delay)
 */
+console.log(tf.getBackend());
 
 const video = document.getElementById("webcam");
 
