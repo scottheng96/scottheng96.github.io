@@ -26,7 +26,6 @@ const bodyPixProperties = {
   //can also be ResNet archtecture
   architecture: "MobileNetV1",
   outputStride: 16,
-  multiplier: 0.75,
   quantBytes: 4
 };
 
