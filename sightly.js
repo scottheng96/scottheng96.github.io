@@ -85,16 +85,17 @@ function getNextFrame() {
 
 const frameSegmentation = async (frame) => {
   // var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
-  const segmentation = await model.segmentMultiPerson(frame, {
-    flipHorizontal: false,
-    internalResolution: 'medium',
-    segmentationThreshold: 0.7,
-    maxDetections: 10,
-    scoreThreshold: 0.2,
-    nmsRadius: 20,
-    minKeypointScore: 0.3,
-    refineSteps: 10
-  });
+  // const segmentation = await model.segmentMultiPerson(frame, {
+  //   flipHorizontal: false,
+  //   internalResolution: 'medium',
+  //   segmentationThreshold: 0.7,
+  //   maxDetections: 10,
+  //   scoreThreshold: 0.2,
+  //   nmsRadius: 20,
+  //   minKeypointScore: 0.3,
+  //   refineSteps: 10
+  // });
+  var segmentation = await model.estimatePersonSegmentation(frame,16,0.5);
   return segmentation;
 };
 
