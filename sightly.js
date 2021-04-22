@@ -40,9 +40,9 @@ const segmentationProperties = {
 /*
 MODEL IMPLEMENTATION
 */
-
 var ready = false;
-
+const model = loadBodyPixModel();
+console.log(model);
 
 const loadBodyPixModel = async () => {
   try {
@@ -57,10 +57,6 @@ const loadBodyPixModel = async () => {
     return undefined;
   }
 };
-
-const model = loadBodyPixModel();
-console.log(model);
-
 
 function filter() {
   if (ready) {
@@ -84,7 +80,7 @@ function getNextFrame() {
 };
 
 const frameSegmentation = async (frame) => {
-  // var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
+  var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
   // const segmentation = await model.segmentMultiPerson(frame, {
   //   flipHorizontal: false,
   //   internalResolution: 'medium',
@@ -95,7 +91,7 @@ const frameSegmentation = async (frame) => {
   //   minKeypointScore: 0.3,
   //   refineSteps: 10
   // });
-  var segmentation = await model.estimatePersonSegmentation(frame,16,0.5);
+  // var segmentation = await model.estimatePersonSegmentation(frame,16,0.5);
   return segmentation;
 };
 
@@ -118,13 +114,8 @@ function updateFeed(personSegment, frame) {
   drawMask(coloredPartImage,opacity, flipHorizontal, maskBlurAmount);
 }
 
-
-//trying a different approach
-async function loadAndPredict() {
-  const net = await bodyPix.load()
-}
-
 // main
+
 
 //starts webcam stream
 if (navigator.mediaDevices.getUserMedia) {
