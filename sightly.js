@@ -75,9 +75,9 @@ function getNextFrame() {
   return sourceCanvas_ctx.drawImage(video,0,0,canvas_bp.width,canvas_bp.height);
 };
 
-const frameSegmentation = async () => {
+const frameSegmentation = async (frame) => {
   // var segmentation = await model.segmentPerson(sourceCanvas, segmentationProperties);
-  const segmentation = await model.segmentMultiPerson(image, {
+  const segmentation = await model.segmentMultiPerson(frame, {
     flipHorizontal: false,
     internalResolution: 'medium',
     segmentationThreshold: 0.7,
@@ -106,7 +106,6 @@ function updateFeed(personSegment, frame) {
   const opacity = 0.7;
   const flipHorizontal = false;
   const maskBlurAmount = 0;
-
   drawMask(coloredPartImage,opacity, flipHorizontal, maskBlurAmount);
 }
 
