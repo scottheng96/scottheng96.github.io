@@ -49,9 +49,15 @@ const loadBodyPixModel = async () => {
   return model;
 };
 
-console.log("trying to load model");
-const model = loadBodyPixModel();
-console.log("Body-Pix model loaded.");
+try {
+  console.log("trying to load model");
+  const model = loadBodyPixModel();
+  console.log("Body-Pix model loaded.");
+} catch (error) {
+  console.log("Body-Pix model not loaded successfully");
+}
+
+
 console.log(model);
 
 function filter() {
