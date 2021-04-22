@@ -49,6 +49,7 @@ const loadBodyPixModel = async () => {
     console.log("trying to load model");
     const model_load = await bodyPix.load();
     console.log("Body-Pix model loaded.");
+    ready = true;
     return model_load;
   }catch (error) {
     console.log("Body-Pix model not loaded successfully");
