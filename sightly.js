@@ -40,9 +40,7 @@ const segmentationProperties = {
 /*
 MODEL IMPLEMENTATION
 */
-var ready = false;
-const model = loadBodyPixModel();
-console.log(model);
+
 
 const loadBodyPixModel = async () => {
   try {
@@ -57,6 +55,10 @@ const loadBodyPixModel = async () => {
     return undefined;
   }
 };
+
+var ready = false;
+const model = loadBodyPixModel();
+console.log(model);
 
 function filter() {
   if (ready) {
