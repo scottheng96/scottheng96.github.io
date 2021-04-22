@@ -43,22 +43,23 @@ MODEL IMPLEMENTATION
 
 var ready = false;
 
+
 const loadBodyPixModel = async () => {
-  const model = await bodyPix.load(bodyPixProperties);
-  ready = true;
-  return model;
+  try {
+    console.log("trying to load model");
+    const model_load = await bodyPix.load(bodyPixProperties);
+    console.log("Body-Pix model loaded.");
+    return model_load;
+  }catch (error) {
+    console.log("Body-Pix model not loaded successfully");
+    console.log(error);
+    return undefined;
+  }
 };
 
-try {
-  console.log("trying to load model");
-  const model = loadBodyPixModel();
-  console.log("Body-Pix model loaded.");
-} catch (error) {
-  console.log("Body-Pix model not loaded successfully");
-}
-
-
+const model = loadBodyPixModel();
 console.log(model);
+
 
 function filter() {
   if (ready) {
