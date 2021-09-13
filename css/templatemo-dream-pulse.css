@@ -37,6 +37,11 @@ a {
   color: #069;
 }
 
+.tm-color-primary-max {
+  color:rgba(0, 0, 0, 0.5)
+
+}
+
 .tm-color-gray {
   color: #333;
 }
@@ -46,7 +51,7 @@ a {
 }
 
 .tm-bg-white-transparent {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid white;
 }
 
@@ -60,6 +65,12 @@ a {
 
 .tm-section-title {
   font-size: 1.6rem;
+  font-family: butler-font;
+  color: #741010;
+}
+
+.tm-section-centralize {
+  /* text-align: center; */
 }
 
 .parallax-window {
@@ -866,4 +877,9 @@ tbody tr:hover {
   margin-left: auto;
   margin-right: 0;
   border: 40px;
+}
+
+@font-face {
+  font-family: butler-font;
+  src: url(font/Butler.woff);
 }
